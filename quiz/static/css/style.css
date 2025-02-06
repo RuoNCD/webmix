@@ -1,0 +1,146 @@
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 24px;
+    margin: 0;
+    padding: 0;
+    background-color: azure;
+}
+
+
+.quiz-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    height: 90vh;
+}
+
+.options-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+}
+
+button.option {
+    all: unset;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 470px;
+    height: 70px;
+    background-color: #fff;
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all .3s;
+    text-transform: uppercase;
+    border: 2px solid #333;
+}
+
+button.option.time-out:disabled {
+    background-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
+    box-shadow: none;
+    border-color: #999;
+    opacity: 0.6;
+}
+
+.question-box {
+    background-color: #fff;
+    width: 500px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
+    text-transform: uppercase;
+    position: relative;
+}
+
+.question-box p {
+    cursor: pointer;
+}
+
+.option:hover {
+    background-color: rgb(207, 226, 242);
+}
+
+.time-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 10px;
+    left: 10px;
+    background-color: red;
+    border-radius: 50%;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px;
+    border: 2px solid #134484;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+}
+
+.score-box {
+    display: flex;
+    top: 0;
+    right: 0;
+    background-color: #fff;
+    color: aquamarine;
+    font-weight: bold;
+    font-size: xx-large;
+    position: absolute;
+    margin: 10px 10px 0px 0px;
+}
+
+.question-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 18px;
+    }
+
+    .quiz-container {
+        gap: 20px;
+        height: auto;
+        padding: 20px;
+    }
+
+    .question-container,
+    .options-container {
+        width: 90%;
+        max-width: 400px;
+        height: auto;
+        padding: 20px;
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .options-container {
+        gap: 15px;
+    }
+
+    button.option {
+        width: 90%;
+        height: 60px;
+        font-size: 16px;
+    }
+
+    .time-box,
+    .score-box {
+        width: 15px;
+        height: auto;
+        padding: 5px;
+        font-size: 14px;
+    }
+}
