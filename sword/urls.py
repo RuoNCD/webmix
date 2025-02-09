@@ -21,5 +21,6 @@ from quiz.views import quiz
 urlpatterns = [
     path("", include("quiz.urls")),
     path("api/", include("api.urls")),
+    path("login/", include("login.urls")),
     path('admin/', admin.site.urls),
 ]

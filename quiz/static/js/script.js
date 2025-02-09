@@ -94,16 +94,22 @@ document.querySelector(".options-container").addEventListener("click", function 
                 console.log(`/api/check-answer/${questionId}/${userAnswer}`, data);
                 if (data.correct) {
                     event.target.style.backgroundColor = "green";
-                    time += 2;
+                    time += 3;
                     calcScore(true)
                 } else {
                     event.target.style.backgroundColor = "red";
                     calcScore(false)
+                    document.querySelectorAll(".option").forEach(button => {
+                        console.log(button.innerText, data.correct_answer)
+                        if (button.innerText == data.correct_answer) {
+                            button.style.backgroundColor = "green";
+                        }
+                    })
                 }
             })
         setTimeout(() => {
             loadNewQuestion();
-        }, 500)
+        }, 800)
     }
 })
 

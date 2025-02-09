@@ -27,7 +27,10 @@ def check_answer(request, question_id, user_answer):
     user_answer=convert_to_ascii(user_answer)
     try:
         word=Question.objects.get(id=question_id)
-        correct=(convert_to_ascii(word.tr.upper().replace(" ", "-"))==user_answer)
-        return JsonResponse({"correct":correct})
+        correct_answer=convert_to_ascii(word.tr.upper())
+        correct=(correct_answer.replace(" ", "-")==user_answer)
+        return JsonResponse({
+            "correct":correct,
+            "correct_answer": correct_answer})
     except Question.DoesNotExist:
         return JsonResponse({"error": "Question not found"}, status=404)
